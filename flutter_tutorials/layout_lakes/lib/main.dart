@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
+// #docregion _buildButtonColumn
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // #docregion titleSection
+    // #enddocregion _buildButtonColumn
     Widget titleSection = Container(
       padding: const EdgeInsets.all(32),
       child: Row(
@@ -45,7 +46,19 @@ class MyApp extends StatelessWidget {
         ],
       ),
     );
-    // #enddocregion titleSection
+
+    // #docregion buttonSection
+    Color color = Theme.of(context).primaryColor;
+
+    Widget buttonSection = Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _buildButtonColumn(color, Icons.call, 'CALL'),
+        _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+        _buildButtonColumn(color, Icons.share, 'SHARE'),
+      ],
+    );
+    // #enddocregion buttonSection
 
     return MaterialApp(
       title: 'Flutter layout demo',
@@ -56,9 +69,32 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: [
             titleSection,
+            buttonSection,
           ],
         ),
       ),
+    );
+    // #docregion _buildButtonColumn
+  }
+
+  Column _buildButtonColumn(Color color, IconData icon, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(icon, color: color),
+        Container(
+          margin: const EdgeInsets.only(top: 8),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: color,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
