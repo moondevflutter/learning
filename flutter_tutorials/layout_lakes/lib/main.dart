@@ -36,10 +36,12 @@ class MyApp extends StatelessWidget {
             ),
           ),
           /*3*/
+          // #docregion Icon
           Icon(
             Icons.star,
             color: Colors.red[500],
           ),
+          // #enddocregion Icon
           const Text('41'),
         ],
       ),
@@ -79,6 +81,14 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
+            // #docregion Image-asset
+            Image.asset(
+              'images/lake.jpg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
+            // #enddocregion Image-asset
             titleSection,
             buttonSection,
             textSection,
