@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+// Uncomment lines 7 and 10 to view the visual layout at runtime.
+// import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
-void main() => runApp(const MyApp());
+void main() {
+  // debugPaintSizeEnabled = true;
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -36,12 +41,10 @@ class MyApp extends StatelessWidget {
             ),
           ),
           /*3*/
-          // #docregion Icon
           Icon(
             Icons.star,
             color: Colors.red[500],
           ),
-          // #enddocregion Icon
           const Text('41'),
         ],
       ),
@@ -58,7 +61,6 @@ class MyApp extends StatelessWidget {
       ],
     );
 
-    // #docregion textSection
     Widget textSection = const Padding(
       padding: EdgeInsets.all(32),
       child: Text(
@@ -71,7 +73,6 @@ class MyApp extends StatelessWidget {
         softWrap: true,
       ),
     );
-    // #enddocregion textSection
 
     return MaterialApp(
       title: 'Flutter layout demo',
@@ -79,16 +80,14 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Flutter layout demo'),
         ),
-        body: Column(
+        body: ListView(
           children: [
-            // #docregion Image-asset
             Image.asset(
               'images/lake.jpg',
               width: 600,
               height: 240,
               fit: BoxFit.cover,
             ),
-            // #enddocregion Image-asset
             titleSection,
             buttonSection,
             textSection,
