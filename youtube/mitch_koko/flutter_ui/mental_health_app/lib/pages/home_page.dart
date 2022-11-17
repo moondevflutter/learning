@@ -145,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                           SizedBox(
                             height: 8,
                           ),
-                          Text('Bad', style: TextStyle(color: Colors.white)),
+                          Text('fine', style: TextStyle(color: Colors.white)),
                         ],
                       ),
                       // well
@@ -155,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                           SizedBox(
                             height: 8,
                           ),
-                          Text('Bad', style: TextStyle(color: Colors.white)),
+                          Text('well', style: TextStyle(color: Colors.white)),
                         ],
                       ),
                       // excellent
@@ -165,7 +165,10 @@ class _HomePageState extends State<HomePage> {
                           SizedBox(
                             height: 8,
                           ),
-                          Text('Bad', style: TextStyle(color: Colors.white)),
+                          Text(
+                            'excellent',
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ],
                       ),
                     ],
@@ -179,8 +182,8 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: ClipRRect(
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                  topRight: Radius.circular(50),
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
                 ),
                 child: Container(
                   padding: EdgeInsets.all(25),
